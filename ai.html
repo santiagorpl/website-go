@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Pian</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#about">Tentang</a>
+  <a href="#portfolio">Portfolio</a>
+  <a href="#contact">Kontak</a>
+</nav>
+
+<section id="home">
+  <h1>Halo, Aku Pian 👋</h1>
+  <p>Streamer & Web Developer Pemula</p>
+  <a href="#about" class="btn">Lihat Tentang Aku</a>
+</section>
+
+<section id="about">
+  <h1>Tentang Aku</h1>
+  <p>Aku suka ngoding, live streaming, dan bikin konten.</p>
+</section>
+
+<section id="portfolio">
+  <h1>Portfolio</h1>
+
+  <div class="card">
+    <h3>Website Top Up Game</h3>
+    <p>Web jual diamond sederhana.</p>
+  </div>
+
+  <div class="card">
+    <h3>Website Portfolio</h3>
+    <p>Website pribadi modern.</p>
+  </div>
+</section>
+
+<section id="contact">
+  <h1>Kontak</h1>
+  <p>Email: pian@email.com</p>
+  <p>TikTok: @pian</p>
+</section>
+
+<script>
+  const sections = document.querySelectorAll("section");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  sections.forEach(sec => {
+    observer.observe(sec);
+  });
+</script>
+
+</body>
+</html>
